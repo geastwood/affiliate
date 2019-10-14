@@ -1,0 +1,11 @@
+node_modules
+dist
+.cache
+yarn-error.log
+.idea
+test.js
+.env
+.vscode
+.awcache
+TODO.md
+public

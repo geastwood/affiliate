@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:watch": "parcel start index.html"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-router-dom": "^5.1.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^5.1.2",
+    "ui": "^0.2.4"
+  }
+}
