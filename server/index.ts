@@ -3,18 +3,15 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import indexRouter from './routes/index'
-import usersRouter from './routes/users'
+import voucherRoute from './routes/vouchers'
 
 const app = express()
 
-import { Sequelize } from 'sequelize'
+import Voucher from './models/voucher'
 
-// @ts-ignore
-import models from './models'
-console.log(Object.keys(models))
-const Op = models.Sequelize.Op
-// @ts-ignore
-models.User.findAll().then(d => console.log(d))
+Voucher.findAll().then((d: Voucher[]) => {
+  d.forEach(d => console.log(d.name))
+})
 
 app.use(logger('dev'))
 app.use(express.json())
@@ -25,6 +22,6 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/voucher', voucherRoute)
 
 export default app
