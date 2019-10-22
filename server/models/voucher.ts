@@ -4,7 +4,7 @@ import getDb from '../database'
 class Voucher extends Model {
   public id!: number
   public name!: string
-  public description!: string
+  public desc!: string
   public type!: number
 
   public readonly createdAt!: Date
@@ -22,7 +22,7 @@ Voucher.init(
       type: new DataTypes.STRING(),
       allowNull: false,
     },
-    description: {
+    desc: {
       type: new DataTypes.STRING(),
       allowNull: false,
     },
